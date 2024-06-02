@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pool Water - CSS Text Effect</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	background-color: #030f12;
+	font-family: sans-serif;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: center;
+}
+
+.container:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-image: url('/pool/pool.jpg');
+	filter: brightness(0.2);
+	background-size: cover;
+}
+
+.logo {
+	position: relative;
+	z-index: 10;
+	filter: url("#waves");
+	width: 100%;
+    height: 100%;
+	display: flex;
+}
+
+.logo .water {
+	text-shadow: 0px 14px #208cb7, 0px 23px #409f92;
+}
+
+.panel {
+	position: relative;
+	z-index: 10;
+	color: #5194af;
+	font-size: 0.8em;
+	padding: 10px 24px;
+    background-color: #a5c8d53b;
+    border-radius: 9999px;
+    margin: 12px 4px;
+	opacity: 0.5;
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+	color: #5c959b;
+}
+
+a:hover {
+	color: #93dfe7;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+	<div class="logo">
+		<svg class="water" viewBox="0 0 785 238" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<defs>
+				<mask id="water-mask">
+					<text x="50" y="170" font-family="Lobster" font-weight="bold" font-size="12em" fill="#eee" id="txt">Summer</text>
+				</mask>
+				
+				<filter id="waves">
+					<feTurbulence id="water-filter" numOctaves="1" seed="1" baseFrequency="0.05"></feTurbulence>
+					<feDisplacementMap scale="15" in="SourceGraphic"></feDisplacementMap>
+					<animate xlink:href="#water-filter" attributeName="baseFrequency" dur="20s" keyTimes="0;0.5;1" values="0.01;0.03;0.01" repeatCount="indefinite"></animate>
+				</filter>
+			</defs>
+			
+			<image xlink:href="/pool/pool.jpg" mask="url(#water-mask)" width="800" height="1093" />
+		</svg>
+	</div>
+	
+	<footer class="footer">
+		<a href="/index.html" class="panel">&lt; Back</a>
+		<div class="panel">
+			Photo by <a href="https://unsplash.com/@artmilitonian?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Artem Militonian</a> on <a href="https://unsplash.com/photos/blue-ocean-UYW6FZLlnL8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+		</div>
+		<a href="https://burakyucel.net" class="panel">burakyucel.net</a>
+		<a href="https://github.com/burakyucel07" class="panel">Github</a>
+	</footer>
+
+</div>
+
+</body>
+</html>
