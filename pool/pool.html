@@ -18,8 +18,8 @@ body {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 	background-color: #030f12;
 	font-family: sans-serif;
 }
@@ -30,8 +30,8 @@ body {
 	height: 100%;
 	z-index: 1;
 	display: flex;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 	justify-content: center;
 }
 
@@ -43,7 +43,7 @@ body {
 	left: 0;
 	right: 0;
 	background-image: url('/css-text-effects/pool/pool.jpg');
-	filter: brightness(0.2);
+	filter: brightness(0.5);
 	background-size: cover;
 }
 
@@ -52,12 +52,13 @@ body {
 	z-index: 10;
 	filter: url("#waves");
 	width: 100%;
-    height: 100%;
+	height: 100%;
 	display: flex;
 }
 
 .logo .water {
-	text-shadow: 0px 14px #208cb7, 0px 23px #409f92;
+	text-shadow: 0 14px #208cb7, 0 23px #409f92;
+	filter: brightness(1.5);
 }
 
 .panel {
@@ -66,9 +67,9 @@ body {
 	color: #5194af;
 	font-size: 0.8em;
 	padding: 10px 24px;
-    background-color: #a5c8d53b;
-    border-radius: 9999px;
-    margin: 12px 4px;
+	background-color: #a5c8d53b;
+	border-radius: 9999px;
+	margin: 12px 4px;
 	opacity: 0.5;
 	display: inline-block;
 }
